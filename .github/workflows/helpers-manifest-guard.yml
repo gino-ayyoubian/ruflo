@@ -63,12 +63,12 @@ jobs:
   guard:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       # Match the CLI test install in v3-ci.yml (Test V3 Packages).
       - uses: pnpm/action-setup@v6
         with:
           version: '8'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22'
           cache: 'pnpm'

@@ -42,8 +42,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '20'
 
@@ -157,10 +157,10 @@ jobs:
             console.log('OK — every agentbbs reference under ' + root + ' is dynamically guarded.');
           RULE2
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6.1.1
         with:
           version: 8
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '20'
           cache: 'pnpm'
