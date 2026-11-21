@@ -24,11 +24,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       - uses: pnpm/action-setup@v6
         with:
           version: '8'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22'
           cache: 'pnpm'
@@ -53,7 +53,7 @@ jobs:
           echo "RUFLO_E2E_CODEX_BIN=$(command -v codex)" >> "$GITHUB_ENV"
       - name: Matrix (keyless)
         run: node scripts/e2e/host-matrix.mjs --cli-path "$PWD/v3/@claude-flow/cli/bin/cli.js" --json e2e-matrix.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: e2e-matrix
